@@ -13,7 +13,8 @@ export default ({ mode }) => {
       host: '0.0.0.0',
       proxy: {
         '/api': {
-          target: 'http://localhost:9000/api/v1',
+          // target: 'http://localhost:9000/api/v1',
+          target: 'http://120.79.169.245/api',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
         },

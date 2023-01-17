@@ -4,13 +4,9 @@ import { TaskGroup } from './taskgroup'
 export interface Project {
   id?: number
   name?: string
-  startAt?: string
-  endAt?: string
   desc?: string
-  owner?: number
-  taskGroups?: TaskGroup[]
 }
-const url = '/api/project'
+const url = '/api/v1/project'
 export const addProject = (p: Project) => {
   return http({
     method: 'POST',
