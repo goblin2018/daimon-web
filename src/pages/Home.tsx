@@ -21,11 +21,12 @@ function Home() {
   useEffect(() => {
     if (socket) {
       console.log('invoke socket ')
-
+      // ws 打开事件
       socket.onopen = (ev) => {
         console.log('on open ', ev)
         socket.send('connect ok')
       }
+      // ws 收到消息 事件
       socket.onmessage = (ev) => {
         console.log(ev.data)
         setData(ev.data)
@@ -48,6 +49,7 @@ function Home() {
         <Button
           onClick={() => {
             if (!socket) {
+              // 创建websocket
               let s = new WebSocket(getWsUrl() + 'connect')
               console.log('connect to socket ', s)
 
